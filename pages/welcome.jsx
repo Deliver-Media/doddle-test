@@ -1,12 +1,13 @@
 import React from 'react';
-import { Button, Text, View } from 'react-native';
+import { Button, Text, View, Image } from 'react-native';
 import welcomeStyles from '../assets/styles/welcomeStyles';
+
 
 
 function Welcome({ navigation }) {
   return (
     <View style={welcomeStyles.container}>
-      <Text style={welcomeStyles.title}>Doodle Test!</Text>
+      <Image source={require('../assets/images/Doddle-Text-Icon.png')}/>
       <View style={welcomeStyles.profilePic}></View>
 
       <View>

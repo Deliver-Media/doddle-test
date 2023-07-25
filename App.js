@@ -11,6 +11,7 @@ import Home from './pages/Home';
 import Welcome from './pages/welcome';
 import Settings from './pages/Settings';
 
+
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
@@ -47,7 +48,7 @@ function NavBar() {
             iconName = focused ? 'documents' : 'documents-outline';
           }
           else if (route.name === 'Upload') {
-            return <View backgroundColor={'white'} borderRadius={10} height={'95%'} width={'70%'}>
+            return <View style={appStyles.centerButton} >
               <Ionicons name={'close-sharp'} size={30} color={'black'} style={{transform: [{rotate: '45deg'}]}} />
               </View>;
           }
@@ -103,7 +104,7 @@ export default function App() {
   return (
     <>
     <StatusBar barStyle="dark-content" backgroundColor="#ffffff" />
-    <SafeAreaProvider>
+    <SafeAreaProvider >
       <NavigationContainer theme={MyTheme}>
         <Stack.Navigator>
           <Stack.Screen
@@ -124,4 +125,14 @@ export default function App() {
   );
 }
 
-
+const appStyles = StyleSheet.create({
+  centerButton: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    borderRadius: 10, 
+    width: '70%',
+    marginTop: 10,
+  },
+});
